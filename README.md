@@ -1,6 +1,6 @@
 This is my fantasy basketball model. The goal of the model is represent a players overall worth with a simple
 number rating. The key benefit of this system is it lets you stack rank your team and give you an idea
-who are your best and most importantly, worst, players. It's pretty simple but I've found it to be very effective in evaluating
+who are your best and most importantly, worst, players are. It's pretty simple but I've found it to be very effective in evaluating
 the general skill of a player in the category format. This model is not 1:1 with points based scoring systems
 used in fantasy. Those systems tend to universally undervalue blocks and steals that are much more
 important in category formats.
