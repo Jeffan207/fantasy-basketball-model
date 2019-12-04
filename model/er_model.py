@@ -16,8 +16,8 @@ class ERModel:
     TURNOVER_CONTR = 7.79882592
     POINTS_CONTR = 1
     POINTS_AVERAGE_PER_MATCHUP = 575.6833333
-    FIELD_GOAL_PERCENTAGE_CONTR = 0.46265
-    FREE_THROW_PERCENTAGE_CONTR = 0.777633333
+    FIELD_GOAL_PERCENTAGE_TARGET = 0.46265
+    FREE_THROW_PERCENTAGE_TARGET = 0.777633333
 
     PERCENTAGE_CONTRIBUTION_MULTIPLIER = 10000
 
@@ -37,8 +37,8 @@ class ERModel:
     def calculateERForPlayer(self, player: Player):
         ER = self.THREE_POINT_CONTR * player.three_points_made + self.REBOUND_CONTR * player.total_rebounds + self.ASSIST_CONTR * player.assists + \
              self.STEAL_CONTR * player.steals + self.BLOCK_CONTR * player.blocks + self.POINTS_CONTR * player.points + \
-             self.__calculatePercentageContribution(player.field_goals_percentage, player.field_goals_attempts, self.FIELD_GOAL_PERCENTAGE_CONTR) + \
-             self.__calculatePercentageContribution(player.free_throws_percentage, player.free_throws_attempts, self.FREE_THROW_PERCENTAGE_CONTR)
+             self.__calculatePercentageContribution(player.field_goals_percentage, player.field_goals_attempts, self.FIELD_GOAL_PERCENTAGE_TARGET) + \
+             self.__calculatePercentageContribution(player.free_throws_percentage, player.free_throws_attempts, self.FREE_THROW_PERCENTAGE_TARGET)
 
         ER = '%.3f' % ER  # Truncate to 3 decimals
 

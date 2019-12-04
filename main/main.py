@@ -10,9 +10,9 @@ if __name__ == '__main__':
     if (int(option)==1):
         player_list = csvHandler.loadBasketballReferenceCSV("FantasyBasketball2019SeasonPerGameStats.csv")
         scored_player_list = erModel.calculateERScores(player_list)
-        csvHandler.writeScoredPlayerCSV(scored_player_list, "test_new_model")
+        csvHandler.writeScoredPlayerCSV(scored_player_list, "test_new_model.csv")
     if (int(option)==2):
-        player_list = csvHandler.loadFantasyProsCSV("FantasyPros_Fantasy_Basketball_Overall_2019_Average_Stats_Last_15_Days.csv")
+        player_list = csvHandler.loadFantasyProsCSV("FantasyPros_Fantasy_Basketball_Overall_2019_Average_Stats_Last_15_Days_Available.csv")
         scored_player_list = erModel.calculateERScores(player_list)
-        csvHandler.writeScoredPlayerCSV(scored_player_list, "fantasy_pros_15_day_league")
+        csvHandler.writeScoredPlayerCSV(scored_player_list, "fantasy_pros_15_day_available.csv")
 
