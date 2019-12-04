@@ -1,4 +1,5 @@
 
+
 class Player:
     """The player class represents a single basketball player. Is used with the model to commute the players ER"""
     def __init__(self, player, position, team, games,  field_goals_made, field_goals_attempts, field_goals_percentage,
@@ -29,7 +30,11 @@ class Player:
             self.free_throws_attempts = self.__calculateAttempts(self.free_throws_made, self.free_throws_percentage)
 
     def __calculateAttempts(self, made, percentage):
-        return float(made/percentage)
+        if (percentage < 0.0001):
+            return 0.0
+        attempts = float(made/percentage)
+        attempts = '%.3f' % attempts
+        return attempts
 
     def toList(self):
         return [self.player, self.position, self.team, self.games, self.field_goals_made, self.field_goals_attempts, self.field_goals_percentage,
